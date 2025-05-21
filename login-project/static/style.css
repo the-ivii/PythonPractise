@@ -1,0 +1,131 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-style: oblique;
+    font-weight: bold;
+    background-color: #236B8E;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Input fields */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #F0F8FF;
+    text-align: center;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: #236B8E;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+/* Button styling */
+button {
+    width: 95%;
+    padding: 12px;
+    background-color: #236B8E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-style: oblique;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1E5A7B;
+}
+
+/* Bottom text link */
+p {
+    margin-top: 15px;
+    color: #1E5A7B;
+    font-style: oblique;
+}
+
+a {
+    color: #00008B;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.word {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.textbox {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #4cae4c;
+}
+
+.bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.bottom a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+}
+
+div {
+    margin-bottom: 10px;
+    color: red;
+}
