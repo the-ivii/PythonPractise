@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import os
 from flask import Flask, render_template
 
-app = Flask(__name__)
+# Flask app with correct folder paths
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
-# Generate a scatter plot and return the figure
 def get_plot():
     data = {
         'a': np.arange(50),
@@ -17,24 +17,24 @@ def get_plot():
     data['b'] = data['a'] + 10 * np.random.randn(50)
     data['d'] = np.abs(data['d']) * 100
 
-    plt.clf()  # Clear any previous plot
+    plt.clf()  # Clear figure
     plt.scatter('a', 'b', c='c', s='d', data=data)
     plt.xlabel('X label')
     plt.ylabel('Y label')
     return plt
 
-# Root route: shows HTML page with the plot
 @app.route('/')
 def home():
     plot = get_plot()
-    plot.savefig(os.path.join('static', 'images', 'plot.png'))
+    plot_path = os.path.join(app.static_folder, 'images', 'plot.png')
+    plot.savefig(plot_path)
     return render_template('matplotlib-plot1.html')
 
-# /show-image route: directly shows image after creating it
 @app.route('/show-image')
 def show_image():
     plot = get_plot()
-    plot.savefig(os.path.join('static', 'images', 'plot.png'))
+    plot_path = os.path.join(app.static_folder, 'images', 'plot.png')
+    plot.savefig(plot_path)
     return '''
     <html>
         <body>
