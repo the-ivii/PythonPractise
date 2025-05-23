@@ -36,16 +36,3 @@ Make sure you have the following installed on your system:
 
 ---
 
-## Installation and Setup
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/your-username/todo-list-flask.git
-   cd todo-list-flask
-
-2. **Install the required packages**
-  ```bash
-  pip install Flask
-
-# And your application is set to run!
