@@ -1,0 +1,123 @@
+body {
+    background: #fff8f0;
+    font-family: 'Quicksand', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 30px;
+    color: #222;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.todo-section {
+    background: #ffd6d6;
+    border-radius: 25px;
+    padding: 30px 30px 20px 30px;
+    width: 350px;
+    min-height: 500px;
+    box-shadow: 0 4px 16px #f7b2b2;
+}
+
+.completed-section {
+    background: #b7e6e0;
+    border-radius: 20px;
+    padding: 30px 30px 20px 30px;
+    width: 300px;
+    min-height: 300px;
+    box-shadow: 0 4px 16px #a0d9d0;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.add-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.add-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e0bcbc;
+    font-size: 1em;
+}
+
+.button {
+    background: #f7b2b2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.button:hover {
+    background: #f38181;
+}
+
+.todo-list, .completed-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li, .completed-list li {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px #f7b2b2;
+}
+
+.completed-list li {
+    background: #e0f7f4;
+    color: #888;
+    text-decoration: line-through;
+    box-shadow: 0 2px 8px #a0d9d0;
+}
+
+.complete-link {
+    color: #f38181;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 15px;
+    border: 1px solid #f38181;
+    border-radius: 8px;
+    padding: 3px 10px;
+    background: #fff0f0;
+    transition: background 0.2s, color 0.2s;
+}
+.complete-link:hover {
+    background: #f38181;
+    color: #fff;
+}
+
+.mark{font-size: 10px;}
