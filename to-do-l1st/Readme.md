@@ -19,6 +19,13 @@ A simple To-Do List web application built using Flask, a lightweight Python web 
 - HTML/CSS (for front-end templates)
 
 ---
+<img width="906" alt="Screenshot 2025-05-23 at 3 58 50 PM" src="https://github.com/user-attachments/assets/50010637-2e35-4be1-8438-f03fbed0fc32" />
+
+<img width="722" alt="Screenshot 2025-05-23 at 3 59 31 PM" src="https://github.com/user-attachments/assets/4b4203c4-1a3c-47dd-bd6c-2dea58feb688" />
+
+
+<img width="707" alt="Screenshot 2025-05-23 at 3 59 50 PM" src="https://github.com/user-attachments/assets/bed5fc86-7227-41d9-b60f-408fd560d884" />
+
 
 ## Prerequisites
 
