@@ -8,4 +8,4 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
 db=SQLAlchemy(app)
 
-from app import routes  # noqa: F401
+from app import routes  

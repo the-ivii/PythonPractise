@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List for {{ date.strftime('%B %d, %Y') }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="button" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">← Back to Calendar</a>
+        
+        <h1 class="title">To-Do List for {{ date.strftime('%B %d, %Y') }}</h1>
+        
+        <div class="main-content">
+            <div class="todo-section">
+                <h2>Incomplete Items</h2>
+                <form action="{{ url_for('add') }}" method="POST" class="add-form">
+                    <input type="text" name="todoitem" placeholder="Add a new task..." required>
+                    <input type="hidden" name="date" value="{{ date.strftime('%Y-%m-%d') }}">
+                    <input type="submit" value="Add" class="button">
+                </form>
+                <ul class="todo-list">
+                    {% for todo in incomplete %}
+                    <li>{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}" class="complete-link">Mark As Complete</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="completed-section">
+                <h2>Completed</h2>
+                <ul class="completed-list">
+                    {% for todo in complete %}
+                    <li>{{ todo.text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
