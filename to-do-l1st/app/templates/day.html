@@ -5,6 +5,69 @@
     <title>To-Do List for {{ date.strftime('%B %d, %Y') }}</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .todo-item {
+            margin: 10px 0;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            box-shadow: 0 2px 8px #f7b2b2;
+        }
+        .completed-item {
+            background: #e0f7f4;
+            color: #888;
+            text-decoration: line-through;
+            box-shadow: 0 2px 8px #a0d9d0;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .task-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .white-dot-link {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid #f38181; /* Matching incomplete section color */
+             cursor: pointer;
+             text-decoration: none;
+        }
+        .task-text {
+             flex-grow: 1;
+        }
+        .actions a {
+             margin-left: 10px;
+             text-decoration: none;
+             display: inline-flex;
+             align-items: center;
+        }
+        .action-icon {
+            width: 16px;
+            height: 16px;
+            fill: #444;
+            vertical-align: middle;
+        }
+        .delete-link .action-icon {
+            fill: #f38181; /* Adjust color to match theme */
+        }
+         .update-link .action-icon {
+            fill: #444; /* Adjust color to match theme */
+        }
+        .actions a:hover .action-icon {
+             fill: #e0bcbc; /* Adjust hover color */
+        }
+        
+    </style>
 </head>
 <body>
     <div class="container">
@@ -22,7 +85,20 @@
                 </form>
                 <ul class="todo-list">
                     {% for todo in incomplete %}
-                    <li>{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}" class="complete-link">Mark As Complete</a></li>
+                    <li class="todo-item">
+                        <div class="task-content">
+                             <a href="{{ url_for('complete', id=todo.id) }}" class="white-dot-link"></a>
+                            <span class="task-text">{{ todo.text }}</span>
+                        </div>
+                        <div class="actions">
+                            <a href="{{ url_for('update', id=todo.id) }}" class="update-link">
+                                 <img src="{{ url_for('static', filename='icons/pen.svg') }}" alt="Update" class="action-icon update-icon">
+                            </a>
+                            <a href="{{ url_for('delete', id=todo.id) }}" class="delete-link">
+                                <img src="{{ url_for('static', filename='icons/bin.svg') }}" alt="Delete" class="action-icon delete-icon">
+                            </a>
+                        </div>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
@@ -30,7 +106,19 @@
                 <h2>Completed</h2>
                 <ul class="completed-list">
                     {% for todo in complete %}
-                    <li>{{ todo.text }}</li>
+                    <li class="todo-item completed-item">
+                         <div class="task-content">
+                            <span class="task-text">{{ todo.text }}</span>
+                         </div>
+                         <div class="actions">
+                             <a href="{{ url_for('update', id=todo.id) }}" class="update-link">
+                                 <img src="{{ url_for('static', filename='icons/pen.svg') }}" alt="Update" class="action-icon update-icon">
+                            </a>
+                             <a href="{{ url_for('delete', id=todo.id) }}" class="delete-link">
+                                 <img src="{{ url_for('static', filename='icons/bin.svg') }}" alt="Delete" class="action-icon delete-icon">
+                             </a>
+                         </div>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>

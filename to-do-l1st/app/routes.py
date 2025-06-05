@@ -94,3 +94,27 @@ def complete(id):
                           year=todo.date.year,
                           month=todo.date.month,
                           day=todo.date.day))
+
+@app.route('/delete/<id>')
+def delete(id):
+    todo = Todo.query.filter_by(id=int(id)).first()
+    db.session.delete(todo)
+    db.session.commit()
+    
+    return redirect(url_for('day_view',
+                          year=todo.date.year,
+                          month=todo.date.month,
+                          day=todo.date.day))
+
+@app.route('/update/<id>', methods=['GET', 'POST'])
+def update(id):
+    todo = Todo.query.filter_by(id=int(id)).first()
+    if request.method == 'POST':
+        todo.text = request.form['new_todoitem']
+        db.session.commit()
+        return redirect(url_for('day_view',
+                              year=todo.date.year,
+                              month=todo.date.month,
+                              day=todo.date.day))
+    else:
+        return render_template('update.html', todo=todo)

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .update-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .update-form input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #e0bcbc;
+            font-size: 1em;
+            max-width: 400px;
+        }
+         .back-link {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <a href="{{ url_for('day_view', year=todo.date.year, month=todo.date.month, day=todo.date.day) }}" class="button back-link" style="text-decoration: none; display: inline-block;">← Back to Day</a>
+
+        <h1 class="title">Update Task</h1>
+        
+        <form action="{{ url_for('update', id=todo.id) }}" method="POST" class="update-form">
+            <input type="text" name="new_todoitem" value="{{ todo.text }}" required>
+            <input type="submit" value="Update" class="button">
+        </form>
+    </div>
+</body>
+</html> 
