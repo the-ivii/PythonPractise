@@ -6,7 +6,9 @@ A simple To-Do List web application built using Flask, a lightweight Python web 
 
 ## Features
 
-- Add new tasks to the to-do list
+- Get a calendar to segregate your tasks according to your day
+- Get the total number of incomplete tasks
+- Add new tasks to the to-do list according to the day
 - View all tasks
 - Delete tasks once completed
 
@@ -19,12 +21,15 @@ A simple To-Do List web application built using Flask, a lightweight Python web 
 - HTML/CSS (for front-end templates)
 
 ---
-<img width="906" alt="Screenshot 2025-05-23 at 3 58 50 PM" src="https://github.com/user-attachments/assets/50010637-2e35-4be1-8438-f03fbed0fc32" />
 
-<img width="722" alt="Screenshot 2025-05-23 at 3 59 31 PM" src="https://github.com/user-attachments/assets/4b4203c4-1a3c-47dd-bd6c-2dea58feb688" />
+<img width="941" alt="Screenshot 2025-06-05 at 10 46 01 PM" src="https://github.com/user-attachments/assets/04460684-ca60-4b78-9566-aac2493e1ff9" />
+
+<img width="760" alt="Screenshot 2025-06-05 at 10 47 26 PM" src="https://github.com/user-attachments/assets/0fd9e8b7-42ba-4876-a8a8-4487bbac98b6" />
 
 
-<img width="707" alt="Screenshot 2025-05-23 at 3 59 50 PM" src="https://github.com/user-attachments/assets/bed5fc86-7227-41d9-b60f-408fd560d884" />
+
+<img width="849" alt="Screenshot 2025-06-05 at 10 46 41 PM" src="https://github.com/user-attachments/assets/e15d5081-1855-4a1d-91c2-b2f1dcb17596" />
+
 
 
 ## Prerequisites
